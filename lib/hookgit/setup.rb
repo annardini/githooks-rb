@@ -28,7 +28,7 @@ module Hookgit
           hook_path = File.join('.git', 'hooks', hook)
           File.open(hook_path, 'w') do |file|
             file.write("#!/bin/bash\n")
-            file.write("hookgit run #{hook} || exit 1\n")
+            file.write("bin/hookgit run #{hook} || exit 1\n")
           end
           File.chmod(0755, hook_path)
         end
