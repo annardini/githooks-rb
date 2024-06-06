@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "hookgit/version"
+require "hookgit/version"
+require "hookgit/setup"
+require "hookgit/cli"
 
 module Hookgit
   class Error < StandardError; end

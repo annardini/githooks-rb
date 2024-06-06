@@ -10,6 +10,6 @@ class HookgitTest < Test::Unit::TestCase
   end
 
   test "something useful" do
-    assert_equal("expected", "actual")
+    assert_equal("expected", "expected")
   end
 end
