@@ -28,7 +28,8 @@ module Hookgit
       Rake.application.load_rakefile
       task_files = Dir.glob(".githooks/tasks/*.rake").select { |file| File.read(file).include?("namespace :#{hook_name.gsub('-', '_')}") }
       task_files.each { |file| Rake.load_rakefile(file) }
-      Rake.application["#{hook_name.gsub('-', '_')}:run"].invoke
+      task_name = "#{hook_name.gsub('-', '_')}:run"
+      Rake.application[task_name].invoke if Rake::Task.task_defined?(task_name)
     end
   end
 end
